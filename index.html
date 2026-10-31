@@ -1296,11 +1296,12 @@ window.PlayingCard=(function(){
       var gx0=g+(Wg-(2*w2+gap))/2,gy0=top+(Hh-(2*1.4*w2+gap))/2;
       for(i=0;i<n;i++)G[i]={x:gx0+w2/2+(i%2)*(w2+gap),y:gy0+.7*w2+Math.floor(i/2)*(1.4*w2+gap),r:REST[i],s:w2/w,ry:360};
     }else{
-      w2=Math.min((W-2*g-gap)/2,(H*.64-28-gap)/2/1.4);
-      var x0=(W-(2*w2+gap))/2;
+      var secB=sec.offsetTop+sec.offsetHeight+20,avail=Math.max(120,H-28-secB);
+      w2=Math.min((W-2*g-gap)/2,(avail-gap)/2/1.4);
+      var x0=(W-(2*w2+gap))/2,y0=secB+Math.max(0,(avail-(2*1.4*w2+gap))/2);
       for(i=0;i<n;i++){
         var row=Math.floor(i/2);
-        G[i]={x:x0+w2/2+(i%2)*(w2+gap),y:H-28-.7*1.4*w2-(1-row)*(1.4*w2+gap),r:REST[i],s:w2/w,ry:360};
+        G[i]={x:x0+w2/2+(i%2)*(w2+gap),y:y0+.7*w2+row*(1.4*w2+gap),r:REST[i],s:w2/w,ry:360};
       }
     }
     range=story.offsetHeight-H;
