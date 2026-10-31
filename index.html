@@ -1025,6 +1025,13 @@ button.flipbtn{font:inherit;cursor:pointer;color:inherit}
 .wc p{font-size:max(4.6cqw,12px)}
 .cst-ctl button{width:44px;height:44px}
 }
+/* phones: more room below the hand-over text, tighter gaps so it still fits */
+@media (max-width:760px){
+.hnd .htxt{bottom:calc(14vh + env(safe-area-inset-bottom,0px));gap:clamp(18px,3.4vh,28px)}
+.hnd .htxt h2{font-size:clamp(36px,10vw,52px)}
+.hnd .htxt p{font-size:clamp(20px,5.4vw,26px)}
+.hnd .hrow{padding-top:clamp(14px,2.4vh,22px)}
+}
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
