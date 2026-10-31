@@ -1017,6 +1017,14 @@ button.flipbtn{font:inherit;cursor:pointer;color:inherit}
 .h .frame .ln.r::after{content:"♦︎";position:absolute;left:-9.5px;bottom:-24px;width:20px;height:20px;display:grid;place-items:center;font:400 16px/1 serif;color:var(--fc)}
 /* solutions intro: breathing room from the screen edges */
 .deck .dk-head{padding-inline:clamp(32px,7vw,120px)}
+/* phones: lift text that scales down too small, bigger tap targets */
+@media (max-width:640px){
+.card p{font-size:max(calc(var(--w)*.052),10px)}
+.card h4{font-size:max(calc(var(--w)*.14),17px)}
+.wc .tag,.wc li{font-size:max(3.6cqw,10px)}
+.wc p{font-size:max(4.6cqw,12px)}
+.cst-ctl button{width:44px;height:44px}
+}
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
