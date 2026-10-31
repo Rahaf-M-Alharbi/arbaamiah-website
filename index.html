@@ -1560,7 +1560,7 @@ window.PlayingCard=(function(){
         fall=io(clamp((p-.08)/.4)), /* card passes */
         out=io(clamp((p-.74)/.2));   /* top hand withdraws */
     /* card: pinched by the top hand, tumbles down, caught in the bottom hand */
-    var wide=W>760,y0=(wide?H*.3:H*.1)+lerp(0,H*.05,a),y1=wide?H*.6:H*.26,cy=lerp(y0,y1,fall),
+    var wide=W>760,y0=(wide?H*.3:Math.max(H*.1,cw*.85+84))+lerp(0,H*.05,a),y1=wide?H*.6:H*.26,cy=lerp(y0,y1,fall),
         rot=lerp(-16,14,fall)+Math.sin(Math.PI*fall)*10,ry=360*fall;
     card.style.transform='translate('+(cx-cw/2)+'px,'+(cy-cw*.7)+'px) rotate('+rot+'deg) rotateY('+ry+'deg)';
     var t=clamp((p-.38)/.14);
